@@ -14,7 +14,7 @@ public class ProductService {
      @Autowired
     private IProductRepository productRepository;
 
-        ProductModel ProductExistente = productRepository.findByNome(ProductModel.getNome())
+        ProductModel ProductExistente = productRepository.findByNome(ProductModel.getNome()) // erro
         if (productExistente != null); {
             throw new Exception();
         }
