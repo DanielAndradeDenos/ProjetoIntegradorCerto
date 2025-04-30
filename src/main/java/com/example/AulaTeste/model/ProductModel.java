@@ -19,14 +19,14 @@ public abstract class ProductModel {
     @GeneratedValue(generator = "UUID")
     private UUID id;
     @Column
-    private String Nome;
+    private String nome;
     @Column
     private Long preco;
 
     public ProductModel(){}
-    public ProductModel(UUID id, String Nome, Long preco){
+    public ProductModel(UUID id, String nome, Long preco){
         this.id = id;
-        this.Nome = Nome;
+        this.nome = nome;
         this.preco = preco;
     }
     public List<ProductModel> findAll() {
