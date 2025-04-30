@@ -6,4 +6,8 @@ import com.example.AulaTeste.model.ProductModel;
 
 public interface IProductRepository extends JpaRepository<ProductModel, UUID>{
     ProductModel findByNome(String nome);
+
+
+
+
 }

@@ -2,21 +2,19 @@ package com.example.AulaTeste.model;
 
 import java.util.UUID;
 
-import com.example.AulaTeste.controller.List;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
 
 @Data
 @Getter
 @Entity(name = "product")
-public class ProductModel {
+public abstract class ProductModel {
     @Id
     @GeneratedValue(generator = "UUID")
     private UUID id;

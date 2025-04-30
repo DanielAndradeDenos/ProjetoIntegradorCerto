@@ -1,6 +1,7 @@
 package com.example.AulaTeste.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity; // adicionado
 
 import com.example.AulaTeste.errors.UsuarioJaExiste;
 import com.example.AulaTeste.model.ProductModel;
@@ -11,15 +12,16 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class ProductService {
 
+     
      @Autowired
-    private IProductRepository productRepository;
+        private IProductRepository productRepository; {
 
-        ProductModel ProductExistente = productRepository.findByNome(ProductModel.getNome()) // erro
-        if (productExistente != null); {
+            String nome = "nome";
+            ProductModel productExistente = productRepository.findByNome(nome); {
             throw new Exception();
         }
 
-        return productRepository.save(productModel);
+        return productRepository.save(ProductModel);
     }
 
     
