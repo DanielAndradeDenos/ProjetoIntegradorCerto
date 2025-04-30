@@ -16,7 +16,7 @@ import lombok.Getter;
 @Data
 @Getter
 @Entity(name = "product")
-public class ProductModel {
+public abstract class ProductModel {
     @Id
     @GeneratedValue(generator = "UUID")
     private UUID id;
