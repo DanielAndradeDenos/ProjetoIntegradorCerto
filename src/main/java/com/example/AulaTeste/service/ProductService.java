@@ -14,12 +14,13 @@ public class ProductService {
      @Autowired
     private IProductRepository productRepository;
 
-        ProductModel ProductExistente = productRepository.findByNome(ProductModel.getNome()) // erro
+        ProductModel ProductExistente = productRepository.findByNome(ProductModel.getNome())
+  return productRepository.save(productModel); // erro
         if (productExistente != null); {
             throw new Exception();
         }
 
-        return productRepository.save(productModel);
+      
     }
 
     
