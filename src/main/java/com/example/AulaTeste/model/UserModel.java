@@ -53,7 +53,18 @@ private int pontuacao;
         this.email = email;
         this.senha = senha;
         this.ultimoacesso = ultimoacesso;
-        this.pontuacao = pontuacao;
+        this.pontuacao = 0;
        
     }
+    public void AdicionarPontuacao(int pontuacao){
+this.pontuacao += pontuacao;
+}
+
+    public void boolean usarPontuacao(int pontosUsados) {
+         if (pontosUsados <= pontuacao) {
+            pontos -= pontosUsados;
+               return true;
+}
+               return false;
+}
 }
