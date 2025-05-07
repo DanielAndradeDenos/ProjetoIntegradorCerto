@@ -20,7 +20,9 @@ public class ProductService {
             throw new ProductJaExiste();
         return productRepository.save(productModel);
         }
-
+    public List<productModel> listarProduto() {
+        return productRepository.findAll();
+    }
       
     }
 
