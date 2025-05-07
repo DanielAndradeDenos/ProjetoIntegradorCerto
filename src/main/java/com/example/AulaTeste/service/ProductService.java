@@ -14,10 +14,10 @@ public class ProductService {
      @Autowired
     private IProductRepository productRepository;
 
-        ProductModel ProductExistente = productRepository.findByNome(ProductModel.getNome())
-  return productRepository.save(productModel); // erro
-        if (productExistente != null); {
-            throw new Exception();
+        public productModel criarProduto(ProducModel productModel) {
+        var productExistente = productRepository.findByNome(productModel.getNome());
+        if (productExistente != null) {
+            throw new ProductJaExiste();
         }
 
       
