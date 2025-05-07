@@ -18,6 +18,7 @@ public class ProductService {
         var productExistente = productRepository.findByNome(productModel.getNome());
         if (productExistente != null) {
             throw new ProductJaExiste();
+        return productRepository.save(productModel);
         }
 
       
