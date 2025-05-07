@@ -23,7 +23,9 @@ public class ProductService {
     public List<productModel> listarProduto() {
         return productRepository.findAll();
     }
-      
+          public productModel buscarPorNome(String Nome) {
+        return productRepository.findByNome(Nome);
+    }
     }
 
     
