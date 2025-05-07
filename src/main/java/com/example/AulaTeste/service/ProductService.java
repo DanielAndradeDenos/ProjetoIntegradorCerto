@@ -14,17 +14,20 @@ public class ProductService {
      @Autowired
     private IProductRepository productRepository;
 
-        public productModel criarProduto(ProducModel productModel) {
-        var productExistente = productRepository.findByNome(productModel.getNome());
+        public ProductModel criarProduto(ProducModel productModel) {
+        var productExistente = productRepository.findByNome(ProductModel.getNome());
         if (productExistente != null) {
             throw new ProductJaExiste();
-        return productRepository.save(productModel);
+        return productRepository.save(ProductModel);
         }
-    public List<productModel> listarProduto() {
+    public List<ProductModel> listarProduto() {
         return productRepository.findAll();
     }
-          public productModel buscarPorNome(String Nome) {
+          public ProductModel buscarPorNome(String Nome) {
         return productRepository.findByNome(Nome);
+    }
+    public ProductModel buscarPorId(String id) {
+        return productRepository.findById(id);
     }
     }
 
