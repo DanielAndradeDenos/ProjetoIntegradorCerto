@@ -1,29 +1,35 @@
 package com.example.AulaTeste.service;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity; // adicionado
-
-import com.example.AulaTeste.errors.UsuarioJaExiste;
+import org.springframework.stereotype.Service;
 import com.example.AulaTeste.model.ProductModel;
 import com.example.AulaTeste.repository.IProductRepository;
-import com.example.AulaTeste.repository.IUserRepository;
+import java.util.List;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
 
+
+@Service
 public class ProductService {
 
-     
-     @Autowired
-        private IProductRepository productRepository; {
+    @Autowired
+    private IProductRepository productRepository;
 
-            String nome = "nome";
-            ProductModel productExistente = productRepository.findByNome(nome); {
-            throw new Exception();
+    public ProductModel criarProduto(ProductModel productModel) {
+        ProductModel productExistente = productRepository.findByNome(productModel.getNome());
+        if (productExistente != null) {
+            throw new IllegalArgumentException("Produto já existe");
         }
-
-        return productRepository.save(ProductModel);
+        return productRepository.save(productModel);
     }
 
-    
-}
+    public List<ProductModel> listarProduto() {
+        return (List<ProductModel>) productRepository.findAll();
+    }
 
+    public ProductModel buscarPorNome(String nome) {
+        return productRepository.findByNome(nome);
+    }
+
+    public ProductModel buscarPorId(String id) {
+        return productRepository.findById(id);
+    }
+}

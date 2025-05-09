@@ -31,6 +31,6 @@ public abstract class ProductModel {
     }
     public List<ProductModel> findAll() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        throw new UnsupportedOperationException("Erro");
     }
 }
