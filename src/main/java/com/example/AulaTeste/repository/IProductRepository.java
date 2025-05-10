@@ -11,5 +11,4 @@ public interface IProductRepository extends JpaRepository<ProductModel, UUID>{
 
 
 
-
 }

@@ -17,8 +17,6 @@ public class SalgadoModel extends ProductModel {
         super();
         this.sabor = sabor;
 
-        SalgadoModel salgado1 = new SalgadoModel();
-
 
     }
     

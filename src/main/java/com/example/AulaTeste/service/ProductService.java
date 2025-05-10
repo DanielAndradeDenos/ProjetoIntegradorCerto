@@ -1,7 +1,11 @@
 package com.example.AulaTeste.service;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
+
+import com.example.AulaTeste.errors.UsuarioJaExiste;
 import com.example.AulaTeste.model.ProductModel;
+
 import com.example.AulaTeste.repository.IProductRepository;
 import java.util.List;
 
@@ -9,20 +13,20 @@ import java.util.List;
 
 @Service
 public class ProductService {
-
     @Autowired
     private IProductRepository productRepository;
 
+
     public ProductModel criarProduto(ProductModel productModel) {
-        ProductModel productExistente = productRepository.findByNome(productModel.getNome());
+        var productExistente = productRepository.findByNome(productModel.getNome());
         if (productExistente != null) {
-            throw new IllegalArgumentException("Produto já existe");
+            throw new UsuarioJaExiste();
         }
         return productRepository.save(productModel);
     }
 
     public List<ProductModel> listarProduto() {
-        return (List<ProductModel>) productRepository.findAll();
+        return productRepository.findAll();
     }
 
     public ProductModel buscarPorNome(String nome) {
@@ -32,4 +36,5 @@ public class ProductService {
     public ProductModel buscarPorId(String id) {
         return productRepository.findById(id);
     }
+
 }
