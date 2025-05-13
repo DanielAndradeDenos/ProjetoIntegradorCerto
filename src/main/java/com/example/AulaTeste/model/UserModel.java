@@ -38,28 +38,20 @@ public class UserModel {
     @Column(name = "ultimoacesso")
  private String ultimoacesso;
 
- @Column(name = "pontuacao")
-private int pontuacao;
-
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     public UserModel() {}
 
-    public UserModel(String nome, String telefone,  String email, String senha, String ultimoacesso,
-     int pontuacao) {
+    public UserModel(String nome, String telefone,  String email, String senha, String ultimoacesso) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
         this.ultimoacesso = ultimoacesso;
-        this.pontuacao = 0;
+    
        
     }
-    public void AdicionarPontuacao(int pontuacao){
-this.pontuacao += pontuacao;
-}
-
-
 
 }
+
